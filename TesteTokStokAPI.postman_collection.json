@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "e521abe0-a838-413f-a013-b6e69f963ba7",
+		"name": "TesteTokStokAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://pokeapi.co/api/v2/pokemon/charmander",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Validar name\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"blaze\");\r",
+							"});\r",
+							"pm.test(\"is_hidden\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"false\");\r",
+							"    });\r",
+							"    pm.test(\"Validar tempo de resposta\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Validar name\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"solar-power\");\r",
+							"});\r",
+							"pm.test(\"is_hidden\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"true\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pokeapi.co/api/v2/pokemon/charmander",
+					"protocol": "https",
+					"host": [
+						"pokeapi",
+						"co"
+					],
+					"path": [
+						"api",
+						"v2",
+						"pokemon",
+						"charmander"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
